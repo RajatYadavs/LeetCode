@@ -2,14 +2,17 @@ class Solution {
 public:
     string longestPalindrome(string s) {
         int n=s.size();
-        vector<vector<bool>>dp(n,vector<bool>(n,false));
+        vector<vector<bool>>dp(n,vector<bool>(n,false)); //DP matrix for tabulation
         
-        for(int i=0;i<n;i++)
+        for(int i=0;i<n;i++) // all matrix updated to true;
             dp[i][i]=true;
+        
         int maxl=1;
         string res="";
         res+=s[0];
-        for(int j=1;j<n;j++)
+        
+/*if(s[i] equals s[j] and s[i+1]s[j-1] is a palindrome then s[i] to s[j] is also a palindrome)*/
+        for(int j=1;j<n;j++) 
         { 
             for(int i=0;i<j;i++)
             {
