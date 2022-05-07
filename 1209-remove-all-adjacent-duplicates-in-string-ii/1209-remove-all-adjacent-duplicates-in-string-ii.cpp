@@ -11,21 +11,18 @@ public:
                 st.push(s[i]);
                 cnt=1;
             }
-            else if(st.top()!=s[i]) //un matched element
+            else if(st.top()!=s[i]) //unmatched element
             {
-                //cout<<"a "<<s[i]<<endl;
                 st.push(s[i]);
                 cnt=1;
             }
             else if(st.top()==s[i] && cnt!=0)
             {
-                //cout<<"b "<<s[i]<<endl;
                 st.push(s[i]);
                 cnt++;
             }
             else if(st.top()==s[i] && cnt==0) //matching element after deletion
             {
-                //cout<<"c "<<s[i]<<endl;
                 int t=0;
                 stack<char>temp;
                 while(!st.empty() && st.top()==s[i])
@@ -52,7 +49,6 @@ public:
                     cnt--;
                 }
             }
-            //cout<<cnt<<endl;
         }
         string res="";
         while(!st.empty())
