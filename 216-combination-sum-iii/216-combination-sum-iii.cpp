@@ -9,10 +9,10 @@ void ways(int idx,int sum,vector<int>v,vector<vector<int>>&res,int k,int n)
         return;
     }
     
-    if(idx<10)
+    if(idx<=9)
         ways(idx+1,sum,v,res,k,n);
      
-    if(idx<10)
+    if(idx<=9)
     {
         v.push_back(idx);
         ways(idx+1,sum+idx,v,res,k,n);
